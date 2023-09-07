@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>
+  {{ video.title }}
+</h1>
+<video
+  src="/media/{{ video.video }}"
+  autoplay
+  controls
+  width="80%"
+  poster="{{ video.thumbnail }}"
+>
+</video>
+<br>
+<strong>
+  {{ video.author }} - {{ video.date_of_upload }}
+</strong>
+<p>
+  {{ video.description }}
+</p>
+{% endblock %}

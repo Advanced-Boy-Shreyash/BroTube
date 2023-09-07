@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<ul>
+{% for x in videos %}
+<li>
+<a href="/player/{{x.id}}">
+<img src="/media/{{x.thumbnail}}" alt="{{x.title}}">
+{{x.title}}
+{{x.author}}
+{% endfor %}
+</li>
+</a>
+</ul>
+
+{% endblock %}

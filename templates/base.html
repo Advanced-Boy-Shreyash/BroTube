@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/pico.css">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+  </head>
+  <body>
+    <header style="padding: 0!important;">
+      <nav>
+        <strong>BroTube</strong>
+        <ul>
+          {{ user }}
+          {% if user.is_authenticated %}
+          <li>
+            <a href="/accounts/logout">
+              Log Out
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="/accounts/login">
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a href="/accounts/signup">
+              Sign up
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <hr>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>
